@@ -1,0 +1,14 @@
+2023-12-10 19:16:16,510 — INFO — distance: 65  samples: 10  buffer: 50
+2023-12-10 19:16:16,511 — INFO — Processing test_wsi
+2023-12-10 19:16:16,511 — INFO — Opening data...
+2023-12-10 19:16:17,198 — INFO — Data loaded in :0:00:00.687750
+2023-12-10 19:16:17,198 — INFO —    preparing data...
+2023-12-10 19:16:17,222 — INFO —    clustering...
+2023-12-10 19:16:17,251 — INFO —    starting get cluster region...
+2023-12-10 19:16:19,054 — INFO —    finished get cluster region: 0:00:01.802477s
+2023-12-10 19:16:19,054 — INFO —    starting biomarker calculation..
+2023-12-10 19:16:23,708 — INFO —    finished calculating: 0:00:04.653607s
+2023-12-10 19:16:23,708 — INFO — test_wsi is finished in :0:00:07.197288
+2023-12-10 19:16:23,708 — INFO — 
+
+
