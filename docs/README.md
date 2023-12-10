@@ -15,7 +15,7 @@ AI-Based Risk Score from Tumour-Infiltrating Lymphocyte Predicts Locoregional-Fr
 ```
 git clone https://github.com/mdsatria/npc_digital_tils.git
 cd npc_digital_tils # or your clone directory
-conda create --name YOUR_ENV_NAME python=3.7
+conda create --name YOUR_ENV_NAME python=3.8
 conda activate YOUR_ENV_NAME
 pip install -r requirements.txt
 ```
