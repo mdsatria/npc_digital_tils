@@ -13,19 +13,27 @@ def save_to_dat(data, fpath):
     with open(fpath, "wb") as f:
         joblib.dump(data, f)
 
+
 def to_dat(json_data):
     dct_type = {
-        1: ['Neoplastic',0],
-        2: ['Inflammatory',1],
-        3: ['Connective',2],
-        4: ['Dead',3],
-        5: ['Epithelial',4],
-        }
+        1: ["Neoplastic", 0],
+        2: ["Inflammatory", 1],
+        3: ["Connective", 2],
+        4: ["Dead", 3],
+        5: ["Epithelial", 4],
+    }
     output = {}
-    key_list = ["box", "centroid", "contour", "prob", "type", "type_id",]
+    key_list = [
+        "box",
+        "centroid",
+        "contour",
+        "prob",
+        "type",
+        "type_id",
+    ]
     for k in list(json_data.keys()):
-        if json_data[k]["type"]>0:
-            output[k] = {x:None for x in key_list}
+        if json_data[k]["type"] > 0:
+            output[k] = {x: None for x in key_list}
             output[k]["box"] = json_data[k]["bbox"]
             output[k]["centroid"] = json_data[k]["centroid"]
             output[k]["contour"] = json_data[k]["contour"]
@@ -39,7 +47,7 @@ def to_dat(json_data):
 def batch_convert_to_dat(input_dir, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
-    
+
     fname = [x for x in sorted(os.listdir(input_dir)) if x.endswith(".json")]
 
     for f in tqdm(fname):
@@ -49,17 +57,13 @@ def batch_convert_to_dat(input_dir, output_dir):
         json_data = load_data(fpath_input)
         dat_data = to_dat(json_data)
         save_to_dat(dat_data, fpath_output)
-        
-
-
-    
 
 
 def get_area(cts):
     x = cts[:, 0]
     y = cts[:, 1]
-    area=0.5*np.sum(y[:-1]*np.diff(x) - x[:-1]*np.diff(y))
-    area=np.abs(area)
+    area = 0.5 * np.sum(y[:-1] * np.diff(x) - x[:-1] * np.diff(y))
+    area = np.abs(area)
     return area
 
 

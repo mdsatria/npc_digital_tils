@@ -351,9 +351,6 @@ class TILVisual(TILData):
         fig.show()
 
 
-
-
-
 class TILScore(TILData):
     def __init__(
         self,
@@ -501,11 +498,11 @@ class TILScore(TILData):
                 feature_tum_morph.append(
                     self.tumour_cluster[cluster_id]["feature_inner_tum"][:11]
                 )
-            
+
         feature_tum_morph = np.array(feature_tum_morph).mean(axis=0)
 
         dct_tum = {}
-        for i, k in enumerate(self.features_names_morph):            
+        for i, k in enumerate(self.features_names_morph):
             dct_tum[k] = feature_tum_morph[i]
 
         return dct_tum

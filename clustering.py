@@ -47,7 +47,9 @@ def main(
     first_start = time.time()
 
     fname = fpath.split("/")[-1].split(".")[0]
-    logger.info(f"distance: {tum_distance}  samples: {tum_samples}  buffer: {outer_buffer}")
+    logger.info(
+        f"distance: {tum_distance}  samples: {tum_samples}  buffer: {outer_buffer}"
+    )
     logger.info(f"Processing {fname}")
 
     #################################################################
@@ -230,20 +232,45 @@ def main(
 
 
 if __name__ == "__main__":
-
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("-i", "--input_dir", help="Directory to nuclei annotation from HoverNet")
+    parser.add_argument(
+        "-i", "--input_dir", help="Directory to nuclei annotation from HoverNet"
+    )
     parser.add_argument("-o", "--output_dir", help="Directory to save the results")
-    parser.add_argument("-cc", "--use_concave", action="store_true", help="Create concave cluster or not. If false, cluster is convex (faster)")
-    parser.add_argument("-nd", "--nuclei_dist", default=100, help="Minimum distance between nuclei, clustering hyperparameter.")
-    parser.add_argument("-nn", "--num_nuclei", default=10, help="Minimum number of nuclei in cluster, clustering hyperparameter.")
-    parser.add_argument("-ob", "--outer_buffer", default=60, help="Size of the enlarged cluster area")
-    parser.add_argument("-nw", "--num_worker", default=4, help="CPU count for multiprocessing")
-    parser.add_argument("-hv", "--use_hovernet", action="store_true", help="Whether use json from HoverNet or not")
+    parser.add_argument(
+        "-cc",
+        "--use_concave",
+        action="store_true",
+        help="Create concave cluster or not. If false, cluster is convex (faster)",
+    )
+    parser.add_argument(
+        "-nd",
+        "--nuclei_dist",
+        default=100,
+        help="Minimum distance between nuclei, clustering hyperparameter.",
+    )
+    parser.add_argument(
+        "-nn",
+        "--num_nuclei",
+        default=10,
+        help="Minimum number of nuclei in cluster, clustering hyperparameter.",
+    )
+    parser.add_argument(
+        "-ob", "--outer_buffer", default=60, help="Size of the enlarged cluster area"
+    )
+    parser.add_argument(
+        "-nw", "--num_worker", default=4, help="CPU count for multiprocessing"
+    )
+    parser.add_argument(
+        "-hv",
+        "--use_hovernet",
+        action="store_true",
+        help="Whether use json from HoverNet or not",
+    )
 
     args = parser.parse_args()
-    
+
     nuclei_dir = args.input_dir
     outdir = args.output_dir
     nuclei_dist = int(args.nuclei_dist)
@@ -252,14 +279,12 @@ if __name__ == "__main__":
     n_worker = int(args.num_worker)
     use_hovernet = args.use_hovernet
     use_concave = args.use_concave
-    
-    
-    
+
     rootdir, fdir, vdir = make_dir_result(
         use_concave, outdir, outer_buffer, nuclei_dist, num_nuclei
     )
     log_file = f"{rootdir}/tum_dist[{nuclei_dist}]-tum_smpl[{num_nuclei}]_buffer[{outer_buffer}].log"
-    logger = get_logger(logger_name="my_log", log_file=log_file)    
+    logger = get_logger(logger_name="my_log", log_file=log_file)
 
     file_list, total_len, total_done = check_processed(nuclei_dir, fdir)
     file_list = sorted(file_list, key=os.path.getsize)
