@@ -1,10 +1,10 @@
-<img src="graphical_abstract.png" width=200px align="rigt">
+<img src="graphical_abstract.png" width=400>
 
 AI-Based Risk Score from Tumour-Infiltrating Lymphocyte Predicts Locoregional-Free Survival in Nasopharyngeal Carcinoma. *MDPI Cancers*
 
 [Journal Link](https://www.mdpi.com/journal/cancers/special_issues/UQW723W3OP)
 
-*TL;DR*: The code provide finding intratumoural, stromal tumour infiltrating lymphocytes (TILs) by density-based clustering and generating 12 TILs score in the paper.
+*TL;DR*: The code is designed to identify intratumoral and stromal tumor-infiltrating lymphocytes (TILs) through density-based clustering, ultimately generating 12 TILs scores as described in the paper.
 
 ## Pre-requisites:
 * Linux (tested on Ubuntu 22.04)
@@ -21,7 +21,7 @@ pip install -r requirements.txt
 ```
 
 ## How to use
-1. Detect nuclei in you images/WSIswith [HoverNet](https://github.com/vqdang/hover_net)
+1. Detect nuclei in your images/WSIs with [HoverNet](https://github.com/vqdang/hover_net)
 2. Open terminal in cloned git directory 
 3. `chmod +x run_clustering.sh` 
 4. Change the argument based on your setting
@@ -38,6 +38,3 @@ pip install -r requirements.txt
 --outer_buffer      Size of the enlarged cluster area
 --num_worker        CPU count for multiprocessing
 ```
-
-## TILs scores and visualisation
-Please refer to example.ipynb
