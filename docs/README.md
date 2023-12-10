@@ -1,4 +1,4 @@
-<img src="graphical_abstract.png" width=400>
+<img src="graphical_abstract.png" width=800>
 
 AI-Based Risk Score from Tumour-Infiltrating Lymphocyte Predicts Locoregional-Free Survival in Nasopharyngeal Carcinoma. *MDPI Cancers*
 
