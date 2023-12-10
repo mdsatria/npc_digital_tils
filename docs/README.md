@@ -2,7 +2,7 @@
 
 AI-Based Risk Score from Tumour-Infiltrating Lymphocyte Predicts Locoregional-Free Survival in Nasopharyngeal Carcinoma. *MDPI Cancers*
 
-[Journal Link](https://www.mdpi.com/journal/cancers/special_issues/UQW723W3OP)
+[Journal Link](https://www.mdpi.com/2072-6694/15/24/5789)
 
 *TL;DR*: The code is designed to identify intratumoral and stromal tumor-infiltrating lymphocytes (TILs) through density-based clustering, ultimately generating 12 TILs scores as described in the paper.
 
