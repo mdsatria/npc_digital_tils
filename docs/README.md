@@ -38,3 +38,15 @@ pip install -r requirements.txt
 --outer_buffer      Size of the enlarged cluster area
 --num_worker        CPU count for multiprocessing
 ```
+
+## License
+If you find our work useful in your research, please consider citing our paper at:
+```
+@article{wibawa_ai-based_2023,
+	title = {AI-Based Risk Score from Tumour-Infiltrating Lymphocyte Predicts Locoregional-Free Survival in Nasopharyngeal Carcinoma},
+	author = {Wibawa, Made Satria and Zhou, Jia-Yu and Wang, Ruoyu and Huang, Ying-Ying and Zhan, Zejiang and Chen, Xi and Lv, Xing and Young, Lawrence S and Rajpoot, Nasir},
+	journal={Cancers},
+	year = {2023},
+	publisher={MDPI}
+}
+```
